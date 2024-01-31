@@ -1,16 +1,15 @@
-import { AppBar, Box, Button, Toolbar, Typography } from '@mui/material';
+import { AppBar, Box, Toolbar, Typography } from '@mui/material'
 import React from 'react'
 
-function DefaultLayout() {
+function Header() {
     return (
         <>
             <Box sx={{ flexGrow: 1 }}>
                 <AppBar position="sticky" >
                     <Toolbar>
-                        <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
+                        <Typography variant="h6" component="h1" sx={{ flexGrow: 1, fontFamily: "cursive" }}>
                             Cars
                         </Typography>
-                        <Button color="inherit">Login</Button>
                     </Toolbar>
                 </AppBar>
             </Box>
@@ -18,4 +17,4 @@ function DefaultLayout() {
     )
 }
 
-export default DefaultLayout;
+export default Header;
