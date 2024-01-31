@@ -1,8 +1,12 @@
 import React from 'react'
+import DefaultLayout from '../../components/DefaultLayout/DefaultLayout.jsx';
 
 function Home() {
   return (
-    <div>Home Page</div>
+    <div>
+      <DefaultLayout />
+      <h1>Home page</h1>
+    </div>
   )
 }
 
