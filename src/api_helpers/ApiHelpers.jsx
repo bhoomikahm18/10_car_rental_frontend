@@ -1,16 +1,16 @@
 import axios from "axios"
 
-export  function getAllCars() {
-    async dispatch => {
-        dispatch({ type: 'LOADING', payload: true })
+export async function getAllCars() {
+    const res = await axios.get("/api/cars/getAllCars")
+        .catch((err) => console.log(err));
 
-        try {
-            const res = await axios.get('/api/cars/getAllCars')
-            dispatch({ type: 'GET_ALL_CARS', payload: res.data })
-            dispatch({ type: 'LOADING', payload: false })
-        } catch (err) {
-            console.log(err);
-            dispatch({ type: 'LOADING', payload: false })
-        }
+    if (res.status !== 200) {
+        return console.log("No Data");
     }
+
+    let data = null;
+    if (res) {
+        data = await res.data;
+    }
+    return data;
 }

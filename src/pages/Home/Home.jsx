@@ -1,15 +1,15 @@
 import React, { useEffect } from 'react'
 import Header from '../../components/Header/Header.jsx';
-import { useDispatch, useSelector } from 'react-redux';
-import { carsAction } from '../../store/index.js';
+import { useSelector } from 'react-redux';
 import { getAllCars } from '../../api_helpers/ApiHelpers.jsx';
 
 function Home() {
-  const [cars, setCars] = useSelector([]);
-  const dispatch = useDispatch()
+  const [cars, setCars] = useSelector(state => state.cars);
 
   useEffect(() => {
-    dispatch(getAllCars())
+    getAllCars()
+      .then(data => console.log(data))
+      .catch(err => console.log(err))
   }, []);
 
   return (

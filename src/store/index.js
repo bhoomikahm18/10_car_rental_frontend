@@ -14,11 +14,11 @@ const alertSlice = createSlice({
     name: "loading",
     initialState: { loading: false },
     reducer: {
-        alert: (state, action) => {
+        alert(state, action) {
             if ("LOADING") {
-            state.loading = action.payload;
+                return state.loading = action.payload;
             } else {
-                state = state;
+                return state.loading = state;
             }
 
         }
