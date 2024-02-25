@@ -1,32 +1,12 @@
-import { configureStore, createSlice } from "@reduxjs/toolkit";
+import { configureStore } from "@reduxjs/toolkit";
+import carSlice from "./car_slice";
+import alertSlice from "./alert_slice";
 
-const carsSlice = createSlice({
-    name: "car",
-    initialState: { cars: [] },
-    reducers: {
-        getAllCars(draft, action) {
-            draft.cars = action.payload
-        }
-    }
-})
-
-const alertSlice = createSlice({
-    name: "alert",
-    initialState: { loading: false },
-    reducers: {
-        isLoading(draft, action) {
-            draft.loading = action.payload.loading;
-        }
-    }
-})
-
-export const carsAction = carsSlice.actions;
-export const alertAction = alertSlice.actions;
-
-export const store = configureStore({
+const store = configureStore({
     reducer: {
-        car: carsSlice.reducer,
+        car: carSlice.reducer,
         alert: alertSlice.reducer
     }
+});
 
-})
+export default store;
