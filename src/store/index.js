@@ -1,26 +1,21 @@
 import { configureStore, createSlice } from "@reduxjs/toolkit";
 
 const carsSlice = createSlice({
-    name: "cars",
-    initialState: [],
+    name: "car",
+    initialState: { cars: [] },
     reducers: {
-        GET_ALL_CARS(state, action) {
-            state = action.payload
+        getAllCars(draft, action) {
+            draft.cars = action.payload
         }
     }
 })
 
 const alertSlice = createSlice({
-    name: "loading",
+    name: "alert",
     initialState: { loading: false },
-    reducer: {
-        alert(state, action) {
-            if ("LOADING") {
-                return state.loading = action.payload;
-            } else {
-                return state.loading = state;
-            }
-
+    reducers: {
+        isLoading(draft, action) {
+            draft.loading = action.payload.loading;
         }
     }
 })
@@ -30,8 +25,8 @@ export const alertAction = alertSlice.actions;
 
 export const store = configureStore({
     reducer: {
-        cars: carsSlice.reducer,
-        alert: alertAction.reducer
+        car: carsSlice.reducer,
+        alert: alertSlice.reducer
     }
 
 })
