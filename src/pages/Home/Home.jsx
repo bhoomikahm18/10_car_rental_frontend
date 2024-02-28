@@ -5,8 +5,10 @@ import { getAllCars } from '../../store/car_actions.js';
 import Paper from '@mui/material/Paper';
 import { styled } from '@mui/material/styles';
 import { carActions } from '../../store/car_slice.js';
+import { Box } from '@mui/material';
 import { ExpandMore } from '@mui/icons-material';
 import { Button, Card, CardActions, CardContent, Typography } from '@mui/material';
+
 
 function Home() {
   const cars = useSelector((state) => state.car.cars);
@@ -22,22 +24,25 @@ function Home() {
   return (
     <>
       {cars.map(car => {
-        return <div className='col-sm-4'>
+        return <div >
           <Card
             sx={{
               margin: 2,
               width: 250,
               height: 320,
-              borderRadius: 5,
+              borderRadius: 2,
               ":hover": {
                 boxShadow: "10px 10px 20px #ccc",
               },
             }}
           >
-            <img height={"50%"} width="100%" src={car.image} />
+            <img height={"65%"} width="100%" src={car.image} />
             <CardContent>
               <Typography gutterBottom variant="h5" component="div">
                 {car.name}
+                <Typography>Capacity: {car.capacity}</Typography>
+                <Typography>Fuel Type: {car.Feultype}</Typography>
+                <Typography>One hour Rent Price : {car.rentPerHour}</Typography>
               </Typography>
             </CardContent>
             <CardActions>
