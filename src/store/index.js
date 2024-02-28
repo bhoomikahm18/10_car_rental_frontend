@@ -8,9 +8,6 @@ const store = configureStore({
         car: carSlice.reducer,
         alert: alertSlice.reducer
     },
-    // middleware: () => {
-    //     return applyMiddleware([thunk])
-    // }
 });
 
 export default store;
