@@ -6,8 +6,6 @@ import { getAllCars } from '../../store/car_actions.js';
 import { Button, Card, CardActions, CardContent, CardMedia, Collapse, Typography } from '@mui/material';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import IconButton from '@mui/material/IconButton';
-import FavoriteIcon from '@mui/icons-material/Favorite';
-import ShareIcon from '@mui/icons-material/Share';
 import styled from '@emotion/styled';
 
 const ExpandMore = styled((props) => {
