@@ -1,0 +1,10 @@
+.cars_home {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+/* 
+.expand_cars:hover {
+    height: 220px;
+} */
