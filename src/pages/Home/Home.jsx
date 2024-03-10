@@ -37,13 +37,14 @@ function Home() {
             <CardContent>
               <Typography gutterBottom variant="h5" component="div">
                 {car.name}
-                <Typography>Capacity: {car.capacity}</Typography>
-                <Typography>Fuel Type: {car.Feultype}</Typography>
-                <Typography>{car.rentPerHour} Rent /hour</Typography>
+
               </Typography>
             </CardContent>
             <CardActions>
               <ExpandMore>
+                <Typography>Capacity: {car.capacity}</Typography>
+                <Typography>Fuel Type: {car.Feultype}</Typography>
+                <Typography>{car.rentPerHour} Rent /hour</Typography>
                 <Button
                   variant="outlined"
                   fullWidth
