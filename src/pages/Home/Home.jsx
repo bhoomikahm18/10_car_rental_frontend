@@ -56,7 +56,7 @@ function Home() {
               alt="Cars Pictures"
             />
             <CardActions disableSpacing>
-              <Typography paragraph>
+              <Typography h5>
                 {car.name}
               </Typography>
               <ExpandMore
@@ -72,7 +72,7 @@ function Home() {
               <CardContent>
 
                 <Typography paragraph>Capacity: {car.capacity}</Typography>
-                <Typography paragraph>Fuel Type: {car.feultype}</Typography>
+                <Typography paragraph>Fuel Type: {car.fuelType}</Typography>
                 <Typography paragraph>{car.rentPerHour} Rent per hour</Typography>
               </CardContent>
             </Collapse>
